@@ -62,8 +62,8 @@ class Answers extends Section implements Initializable
             ->setColumns(
                 \AdminColumn::text('id', '#')->setWidth('30px'),
                 \AdminColumn::link('answer', 'Answer')->setWidth('200px'),
-                \AdminColumn::text('user_id', 'Admin №')->setWidth('100px'),
-                 \AdminColumn::text('question_id', 'question №')->setWidth('30px')
+                \AdminColumn::text('authorAnswer.name', 'Admin')->setWidth('100px'),
+                 \AdminColumn::text('questions.question', 'question №')->setWidth('30px')
             )->paginate(10);
     }
 
@@ -76,10 +76,10 @@ class Answers extends Section implements Initializable
     {
         // remove if unused
         return \AdminForm::panel()->addBody([
-            \AdminFormElement::text('answer', 'Aanswer')->required(),
-            \AdminFormElement::text('user_id', 'Admin №')->required(),
-            \AdminFormElement::text('question_id', 'question №')->required(),
-            \AdminFormElement::text('id', 'ID')->setReadonly(1),
+            \AdminFormElement::textarea('answer', 'Aanswer')->required(),
+            \AdminFormElement::text('authorAnswer.name', 'Admin')->setReadonly(1),
+            \AdminFormElement::text('questions.question', 'Вопрос')->required(),
+            // \AdminFormElement::text('id', 'ID')->setReadonly(1),
             \AdminFormElement::text('created_at')->setLabel('Создано')->setReadonly(1),
 
         ]);
@@ -89,11 +89,11 @@ class Answers extends Section implements Initializable
     /**
      * @return FormInterface
      */
-    public function onCreate()
-    {
-       return $this->onEdit(null);
+    // public function onCreate()
+    // {
+    //    return $this->onEdit(null);
 
-    }
+    // }
 
 
     /**

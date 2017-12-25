@@ -22,29 +22,6 @@ use SleepingOwl\Admin\Navigation\Page;
 // AdminSection::addMenuPage(\App\User::class)
 
 return [
-//all_admins new_admin catrgories new_category
-    //     [
-    //     'title' => 'Все администраторы',
-    //     'url'   => route('admin.all_admins'),
-    // ],
-
-    // [
-    //     'title' => 'Создать нового администратора',
-    //     'url'   => route('admin.new_admin'),
-    // ],
-
-
-    [
-        'title' => 'Все темы',
-        'url'   => route('admin.all_catrgories'),
-    ],
-
-
-
-    // [
-    //     'title' => 'Создать новую тему',
-    //     'url'   => route('admin.new_category'),
-    // ],
 
 //Dashboard, Information
     // [

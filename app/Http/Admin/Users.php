@@ -53,10 +53,9 @@ class Users extends Section implements Initializable
     {
 
         // remove if unused
-        return \AdminDisplay::table()/*->with('users')*/
+        return \AdminDisplay::table()
             ->setHtmlAttribute('class', 'table-primary')
             ->setColumns(
-                \AdminColumn::text('id', '#')->setWidth('30px'),
                 \AdminColumn::link('name', 'Name')->setWidth('200px'),
                 \AdminColumn::text('email', 'Email')
             )->paginate(10);
@@ -73,9 +72,7 @@ class Users extends Section implements Initializable
         return \AdminForm::panel()->addBody([
             \AdminFormElement::text('name', 'Name')->required(),
             \AdminFormElement::text('email', 'Email')->required(),
-             \AdminFormElement::password('password', 'Password')->hashWithBcrypt(),
-             // \AdminFormElement::password('password', 'Password')->hashWithMD5(),
-            \AdminFormElement::text('id', 'ID')->setReadonly(1),
+            \AdminFormElement::password('password', 'Password')->hashWithBcrypt(),
             \AdminFormElement::text('created_at')->setLabel('Создано')->setReadonly(1),
 
 

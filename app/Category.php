@@ -7,40 +7,23 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
 
-    // public function questions()
-    // {
-    //     return $this->hasMany('App\Question');
-    // }
-
-
-// public function categoryQuestion()
-// {
-//     return $this->belongsTo('App\Question');
-// }
-
-
     public function categoryQuestion()
     {
-        return $this->hasOne('App\Question');
+         return $this->hasMany('App\Question');
     }
 
+    public function totalQuestions()
+    {
+         return $this->hasMany('App\Question')->where('status','1');
+    }
+    public function noAnswerQuestions()
+    {
+        return $this->hasMany('App\Question')->where('status','0');
+    }
 
+    public function hiddenQuestions()
+    {
+        return $this->hasMany('App\Question')->where('status','2');
+    }
 
-    // public function questionsPoli()
-    // {
-    //     return $this->morphTo();
-    // }
-
-
-    //      public function themesPoli()
-    // {
-    //     return $this->morphMany('App\Category','');
-    // }
-
-
-
-    //  public function questionsPoli()
-    // {
-    //     return $this->morphMany('App\Question', 'questions');
-    // }
 }

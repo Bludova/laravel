@@ -6,27 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model
 {
-    //
 
   public function themes() {
-    return $this->belongsTo('App\Category','category_id');
+      return $this->belongsTo('App\Category','category_id');
   }
 
-     public function answersFaq()
+    public function answers()
     {
-        return $this->hasOne('App\Answer');
+         return $this->hasOne('App\Answer');
     }
 
 
-    public function questionsPoli()
+    public function questionGuest()
     {
-        return $this->morphTo();
+         return $this->hasOne('App\Guest');
     }
-
-    //      public function themesPoli()
-    // {
-    //     return $this->morphMany('App\Category', 'category');
-    // }
-
 
 }

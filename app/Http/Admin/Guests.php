@@ -58,13 +58,13 @@ class Guests extends Section implements Initializable
     {
 
         // remove if unused
-        return \AdminDisplay::table()/*->with('users')*/
+        return \AdminDisplay::table()
             ->setHtmlAttribute('class', 'table-primary')
             ->setColumns(
                 \AdminColumn::text('id', '#')->setWidth('30px'),
                 \AdminColumn::link('nickname', 'Nickname')->setWidth('100px'),
                 \AdminColumn::text('email', 'Email')->setWidth('100px'),
-                 \AdminColumn::text('question_id', 'question №')->setWidth('30px')
+                \AdminColumn::text('question.question', 'Вопрос')->setWidth('120px')
             )->paginate(10);
     }
 
@@ -79,9 +79,6 @@ class Guests extends Section implements Initializable
         return \AdminForm::panel()->addBody([
             \AdminFormElement::text('nickname', 'Nickname')->required(),
             \AdminFormElement::text('email', 'Email')->required(),
-            \AdminFormElement::text('password', 'Password')->required(),
-            \AdminColumn::text('question_id', 'question №')->required(),
-            \AdminFormElement::text('id', 'ID')->setReadonly(1),
             \AdminFormElement::text('created_at')->setLabel('Создано')->setReadonly(1),
 
         ]);
@@ -116,7 +113,7 @@ class Guests extends Section implements Initializable
 
     // public function getCreateTitle()
     // {
-    //     return 'Создать нового администратора';
+    //
     // }
 
     // иконка для пункта меню - шестеренка

@@ -11,13 +11,8 @@ namespace App\Providers;
 //      * @var array
 //      */
 //     protected $sections = [
-//         // \App\Users::class => 'App\Http\Sections\Users',
+//         \\\App\Users::class => 'App\Http\Sections\Users',
 //          \App\User::class => 'App\Http\Admin\Users',
-//           // \App\Role::class => 'App\Http\Admin\Roles',
-//         // \App\Answer::class => 'App\Http\Admin\Answers',
-//          \App\Category::class => 'App\Http\Admin\Categories',
-//         // \App\Guest::class => 'App\Http\Admin\Guests',
-//         // \App\Question::class => 'App\Http\Admin\Questions',
 //     ];
 
 //     /**
@@ -45,7 +40,6 @@ class AdminSectionsServiceProvider extends ServiceProvider
      * @var array
      */
     protected $sections = [
-        // Role::class => 'App\Http\Admin\Roles',
         \App\User::class => 'App\Http\Admin\Users',
         \App\Category::class => 'App\Http\Admin\Categories',
        \App\Question::class => 'App\Http\Admin\Questions',
